@@ -1,39 +1,79 @@
-### ABstract
-- LLM are impressive in benchmark, true potential of LLM in dynamic environment remains unclear.
-- Study evaluates LLM in various areas. Found that Large model outperform smaaler ones, but this gap can be brought close using stratergic prompting.
-- Too long prompt can negatively impact smaller language models.
-- Advanced prompting techniques benifits smalll language models but offer less benifit to large langauage models.
-- CoT or Self-Reflection can improve a model in many tasks but are not reliable accross all tasks.
-- LLMs are smart but there is no strong sign on human like performance.
-- THey lack task that require : planning, reasoning and spatial coordination.
-- Traditional tests are too static and narrow whereas real-world is messy, dynamic and varied.
+# Towards a Deeper Understanding of Reasoning Capabilities in Large Language Models
 
+<a href = "https://arxiv.org/pdf/2505.10543">Paper Link </a>
 
-### Introduction
-- We present systematic comparition of LLM in dynamic decision makeing tasks.
-    - Prompting Stratergy : Reflection, heurestic mutation and planning
-    - Findings
-        - On simple tasks, Excessive reasoning harm small model while larger are robust.
-        - Advanced prompting techniques benifits smalll language models but offer less benifit to large langauage models i.e scaling laws holds true by prompting helps.
-        - Advanced reasoning technique yeild highly variable outcomes.
-- Current LLM struggle in task involving sequential planning and spatial understanding.
-- Benchmark like QA dataset, math world problem or closed-form task overestimates the reasoning capabilities.
-- Static Tasks are not effective, hence we use dynamic-interactive taks like SMARTPLAY which are more effective at revealing the true reasoning capabilities.
+## 🧠 **Abstract (Refined)**
 
-### Background
-- LLMs are trained to predict the next token, not to plan or reason deeply.
-- So, they often struggle with long-term strategy, memory, and feedback loops in these dynamic tasks.
-- Emerging Prompting Tecnhiques
-    - Chain of Thouhts : Think Aloud - step by step.
-    - Self-Refine : criticizes or revsiese its on output which helps to improve results over iterations.
-    - ReAct : blends thought and environment interaction i.e integrate reasoning with action.
-    - Reflexion: Check how well previos action perfoemed and changes its future behavior.
-- Emerging Direction in Imporving LLM Agent Behavior
-    - Iterative Plan Refinent Approaches
-        - AutoPlan: replanning based on new info or patial progress.
-        - DEPS: uses feedback loop
-        - RCI: focuses on computer tasks execution
-    - Evolutuonaly Stratergy For Prompt Optimzation
-        - EvoPrompt: Uses genetic algot to evolve better prompt.
-        - PLUM and LLaMEA: genrate diverse prompt and select most sucessful ones.
-- THis study presnts unified benchmark suite of how different stratergy actually helps.
+Large Language Models (LLMs) demonstrate remarkable performance on standardized benchmarks, but their true capabilities in dynamic, real-world environments remain underexplored. This study evaluates LLMs across a range of interactive and adaptive tasks. Key findings include:
+
+* **Model size vs. prompt quality**: Larger models consistently outperform smaller ones, but the performance gap can be significantly reduced through strategic prompting.
+* **Prompt length matters**: Excessively long prompts degrade performance, especially in smaller models.
+* **Prompting techniques**: Advanced methods like Chain-of-Thought (CoT) and Self-Reflection are beneficial for smaller models but yield diminishing returns for larger ones.
+* **Generalization limitations**: While techniques like CoT and Reflexion help in some tasks, they do not generalize well across all domains.
+* **Lack of human-like intelligence**: Current LLMs fall short in tasks requiring planning, deep reasoning, or spatial coordination.
+* **Benchmark limitations**: Standard benchmarks are often static and narrow, failing to capture the messiness and complexity of real-world decision-making.
+
+---
+
+## 🔍 **Introduction**
+
+This study presents a **systematic evaluation of LLMs** in dynamic decision-making settings that go beyond traditional static benchmarks. It focuses on how LLMs handle:
+
+* **Prompting strategies** such as:
+
+  * **Reflection** – learning from past responses,
+  * **Heuristic mutation** – modifying prompts based on observed behavior,
+  * **Planning** – explicit action sequencing for achieving long-term goals.
+
+### 🧪 Key Findings:
+
+* **Prompting impact varies with model size**:
+
+  * Smaller models often suffer when subjected to excessive reasoning chains.
+  * Larger models show robustness but gain marginal improvements from advanced prompting.
+* **Reasoning is not general-purpose**:
+
+  * CoT, Self-Refine, and Reflexion yield **inconsistent improvements** across different tasks.
+* **Inadequacy of current benchmarks**:
+
+  * QA datasets and math word problems **overstate LLM reasoning abilities**.
+  * **Static tasks** fail to capture the demands of real-world reasoning.
+
+To address this, the authors use **SMARTPLAY** – a benchmark of **dynamic-interactive tasks** that reveal genuine reasoning and planning capabilities more effectively.
+
+---
+
+## 🧠 **Background**
+
+LLMs are fundamentally trained to **predict the next token**, not to reason, plan, or coordinate actions across time. This creates major limitations when these models are placed in dynamic environments where memory, feedback, and strategy are essential.
+
+### 🧰 **Emerging Prompting Techniques**:
+
+1. **Chain of Thought (CoT)** – Encourages step-by-step reasoning.
+2. **Self-Refine** – Models critique and revise their own outputs iteratively.
+3. **ReAct** – Combines reasoning with environment-based actions.
+4. **Reflexion** – Models reflect on previous outcomes to guide future behavior.
+
+### ⚙️ **LLM Agent Behavior: Key Enhancements**
+
+* **Iterative Planning Approaches**:
+
+  * **AutoPlan** – Replans based on partial progress and new context.
+  * **DEPS** – Leverages a feedback loop for dynamic adjustment.
+  * **RCI** – Targets precise task execution in structured environments.
+
+* **Evolutionary Prompt Optimization**:
+
+  * **EvoPrompt** – Uses genetic algorithms to evolve effective prompts.
+  * **PLUM / LLaMEA** – Generate and evaluate diverse prompts, selecting the best-performing variants.
+
+These strategies represent **new directions** for improving LLM performance in more complex, real-world settings.
+
+---
+
+## 🧪 **What This Study Contributes**
+
+* Introduces a **unified benchmark suite** for evaluating dynamic task performance.
+* Demonstrates the **non-trivial impact of prompting strategy and model size**.
+* Challenges the overreliance on static benchmarks by promoting **interactive and evolving testbeds**.
+* Offers critical insight into the **gap between LLM performance on benchmarks and their real-world utility**, especially in **planning, reasoning, and adaptive behavior**.
